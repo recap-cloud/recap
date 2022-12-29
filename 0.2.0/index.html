@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A Dead Simple Data Catalog Written for Engineers">
+        <meta name="description" content="A Dead Simple Data Catalog for Engineers">
       
       
         <meta name="author" content="Chris Riccomini">
@@ -281,6 +281,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
     Commands
   </a>
@@ -288,8 +302,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#get-started" class="md-nav__link">
+    Get Started
   </a>
   
 </li>
@@ -310,38 +324,23 @@
   
   
     <li class="md-nav__item">
+      <a href="quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="cli.md" class="md-nav__link">
         CLI
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="crawlers.md" class="md-nav__link">
-        Crawlers
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="catalogs.md" class="md-nav__link">
-        Catalog
       </a>
     </li>
   
@@ -392,21 +391,6 @@
   
 
     
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="plugins.md" class="md-nav__link">
-        Plugins
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -434,6 +418,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#commands" class="md-nav__link">
     Commands
   </a>
@@ -441,8 +439,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#get-started" class="md-nav__link">
+    Get Started
   </a>
   
 </li>
@@ -468,20 +466,29 @@
 
 
 <h1 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
+<p>Recap is a dead simple data catalog for engineers.</p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Crawls metadata for major cloud data warehouses and Postgres</li>
+<li>No external system dependencies to get started</li>
+<li>CLI-first design</li>
+<li>Runs as a Python library or REST API</li>
+<li>Pluggable CLI</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><code>pip install recap-core
+</code></pre></div>
+
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><code>recap api</code> - Start Recap's REST API.</li>
+<li><code>recap list</code> - List a data catalog directory.</li>
+<li><code>recap read</code> - Read metadata from the data catalog.</li>
+<li><code>recap refresh</code> - Crawl infrastructure an save metadata in the data catalog.</li>
+<li><code>recap search</code> - Search the data catalog for metadata.</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h2 id="get-started">Get Started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
+<p>See the <a href="quickstart/">Quickstart</a> page to get started.</p>
 
   <hr>
 <div class="md-source-file">
@@ -507,6 +514,27 @@ docs/
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+      
+        
+        <a href="quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quickstart" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Quickstart
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
