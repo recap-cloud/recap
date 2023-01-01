@@ -2,12 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.recap.cloud/0.2.0/</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/analyzers/</loc>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/browsers/</loc>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/catalogs/</loc>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/commands/</loc>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/configuration/</loc>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/crawler/</loc>
+         <lastmod>2023-01-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.recap.cloud/0.2.0/logging/</loc>
+         <lastmod>2023-01-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.recap.cloud/0.2.0/quickstart/</loc>
-         <lastmod>2022-12-29</lastmod>
+         <lastmod>2023-01-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

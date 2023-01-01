@@ -342,8 +342,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli.md" class="md-nav__link">
-        CLI
+      <a href="../commands/" class="md-nav__link">
+        Commands
       </a>
     </li>
   
@@ -357,8 +357,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api.md" class="md-nav__link">
-        API
+      <a href="../crawler/" class="md-nav__link">
+        Crawler
       </a>
     </li>
   
@@ -372,7 +372,37 @@
   
   
     <li class="md-nav__item">
-      <a href="../configuration.md" class="md-nav__link">
+      <a href="../browsers/" class="md-nav__link">
+        Browsers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analyzers/" class="md-nav__link">
+        Analyzers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -387,8 +417,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../logs.md" class="md-nav__link">
-        Logs
+      <a href="../logging/" class="md-nav__link">
+        Logging
       </a>
     </li>
   
@@ -482,18 +512,18 @@
 
 <h2 id="crawl">Crawl<a class="headerlink" href="#crawl" title="Permanent link">&para;</a></h2>
 <p>Now let's crawl a database:</p>
-<div class="codehilite"><pre><span></span><code>recap refresh postgresql://username@localhost/some_db
+<div class="codehilite"><pre><span></span><code>recap crawl postgresql://username@localhost/some_db
 </code></pre></div>
 
 <p>You can use any <a href="https://docs.sqlalchemy.org/en/14/dialects/">SQLAlchemy</a> connect string.</p>
-<div class="codehilite"><pre><span></span><code>recap refresh bigquery://some-project-12345
-recap refresh snowflake://some_user:some_pass@some_account_id
+<div class="codehilite"><pre><span></span><code>recap crawl bigquery://some-project-12345
+recap crawl &#39;snowflake://username:password@account_identifier/SOME_DB/SOME_SCHHEMA?warehouse=SOME_COMPUTE&#39;
 </code></pre></div>
 
 <p>For Snowflake and BigQuery, you'll have to <code>pip install snowflake-sqlalchemy</code> or <code>pip install sqlalchemy-bigquery</code>, respectively.</p>
 <h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
 <p>Crawled metadata is stored in a directory structure. See what's available using:</p>
-<div class="codehilite"><pre><span></span><code>recap list /
+<div class="codehilite"><pre><span></span><code>recap catalog list /
 </code></pre></div>
 
 <p>Recap will respond with a JSON list:</p>
@@ -501,13 +531,13 @@ recap refresh snowflake://some_user:some_pass@some_account_id
 <span class="w">  </span><span class="s2">&quot;databases&quot;</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </code></pre></div>
-<p>Append children to the list path to browse around:</p>
-<div class="codehilite"><pre><span></span><code>recap list /databases
+<p>Append children to the path to browse around:</p>
+<div class="codehilite"><pre><span></span><code>recap catalog list /databases
 </code></pre></div>
 
 <h2 id="read">Read<a class="headerlink" href="#read" title="Permanent link">&para;</a></h2>
-<p>After you poke around, try and read some metadata. Every node in the path can have metadata, but only table and view children contain metadata. You can look at metadata using the <code>recap read</code> command:</p>
-<div class="codehilite"><pre><span></span><code>recap read /databases/postgresql/instances/localhost/schemas/some_db/tables/some_table
+<p>After you poke around, try and read some metadata. Every node in the path can have metadata, but right now only tables and views do. You can look at metadata using the <code>recap catalog read</code> command:</p>
+<div class="codehilite"><pre><span></span><code>recap catalog read /databases/postgresql/instances/localhost/schemas/some_db/tables/some_table
 </code></pre></div>
 
 <p>Recap will print all of <code>some_table</code>'s metadata to the CLI in JSON format:</p>
@@ -543,7 +573,7 @@ recap refresh snowflake://some_user:some_pass@some_account_id
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BIGINT&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;data_profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
 <span class="w">      </span><span class="nt">&quot;distinct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
@@ -587,7 +617,7 @@ recap refresh snowflake://some_user:some_pass@some_account_id
 </code></pre></div>
 <h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
 <p>You can search for metadata, too. Recap stores its metadata in <a href="https://duckdb.org">DuckDB</a> by default, so you can use DuckDB's <a href="https://duckdb.org/docs/extensions/json">JSON path syntax</a> to search the catalog:</p>
-<div class="codehilite"><pre><span></span><code>recap search &quot;metadata-&gt;&#39;$.location&#39;-&gt;&gt;&#39;$.table&#39; = &#39;some_table&#39;&quot;
+<div class="codehilite"><pre><span></span><code>recap catalog search &quot;metadata-&gt;&#39;$.location&#39;-&gt;&gt;&#39;$.table&#39; = &#39;some_table&#39;&quot;
 </code></pre></div>
 
 <p>The database file defaults to <code>~/.recap/catalog/recap.duckdb</code>, if you wish to open a DuckDB client directly.</p>
@@ -597,7 +627,7 @@ recap refresh snowflake://some_user:some_pass@some_account_id
   <small>
     
       Last update:
-      2022-12-28
+      2022-12-31
     
   </small>
 </div>
@@ -635,6 +665,21 @@ recap refresh snowflake://some_user:some_pass@some_account_id
           </div>
         </a>
       
+      
+        
+        <a href="../commands/" class="md-footer__link md-footer__link--next" aria-label="Next: Commands" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Commands
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

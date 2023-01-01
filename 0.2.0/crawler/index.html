@@ -12,19 +12,21 @@
         <meta name="author" content="Chris Riccomini">
       
       
-      <link rel="icon" href="/0.2.0/img/favicon.ico">
+        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/crawler/">
+      
+      <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Recap</title>
+        <title>Crawler - Recap</title>
       
     
     
-      <link rel="stylesheet" href="/0.2.0/assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="/0.2.0/assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -41,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("/0.2.0",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#behavior" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,9 +90,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/0.2.0/." title="Recap" class="md-header__button md-logo" aria-label="Recap" data-md-component="logo">
+    <a href=".." title="Recap" class="md-header__button md-logo" aria-label="Recap" data-md-component="logo">
       
-  <img src="/0.2.0/img/recap-logo-square.png" alt="logo">
+  <img src="../img/recap-logo-square.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -101,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Crawler
             
           </span>
         </div>
@@ -210,9 +217,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/0.2.0/." title="Recap" class="md-nav__button md-logo" aria-label="Recap" data-md-component="logo">
+    <a href=".." title="Recap" class="md-nav__button md-logo" aria-label="Recap" data-md-component="logo">
       
-  <img src="/0.2.0/img/recap-logo-square.png" alt="logo">
+  <img src="../img/recap-logo-square.png" alt="logo">
 
     </a>
     Recap
@@ -240,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Home
       </a>
     </li>
@@ -255,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/quickstart/" class="md-nav__link">
+      <a href="../quickstart/" class="md-nav__link">
         Quickstart
       </a>
     </li>
@@ -270,7 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/commands/" class="md-nav__link">
+      <a href="../commands/" class="md-nav__link">
         Commands
       </a>
     </li>
@@ -283,11 +290,69 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/0.2.0/crawler/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Crawler
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Crawler
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    Behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling" class="md-nav__link">
+    Scheduling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -300,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/browsers/" class="md-nav__link">
+      <a href="../browsers/" class="md-nav__link">
         Browsers
       </a>
     </li>
@@ -315,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/analyzers/" class="md-nav__link">
+      <a href="../analyzers/" class="md-nav__link">
         Analyzers
       </a>
     </li>
@@ -330,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -345,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.2.0/logging/" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         Logging
       </a>
     </li>
@@ -370,6 +435,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    Behavior
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling" class="md-nav__link">
+    Scheduling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -380,8 +481,54 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  <a href="https://github.com/recap-cloud/recap/tree/main/docs/crawler.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>Crawler</h1>
+
+<p>Recap's crawler does three things:</p>
+<ol>
+<li>Browses the configured infrastructure</li>
+<li>Analyzes the infrastructure's data to generate metadata</li>
+<li>Stores the metadata in Recap's data catalog</li>
+</ol>
+<h2 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">&para;</a></h2>
+<p>Recap's crawler is very simple right now. The crawler recursively browses and analyzes all children starting from an infrastructre's root location.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The meaning of an infrastructure's <em>root</em> location depends on its type. For a database, the <em>root</em> usually denotes a database or catalog (to use <a href="https://en.wikipedia.org/wiki/Information_schema"><em>information_schema</em></a> terminology). For object stores, the <em>root</em> is usually the bucket location.</p>
+</div>
+<h2 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permanent link">&para;</a></h2>
+<p>Recap's crawler does not have a built in scheduler or orchestrator. You can run crawls manually with <code>recap crawl</code>, or you can schedule <code>recap crawl</code> to run periodically using <a href="https://en.wikipedia.org/wiki/Cron">cron</a>, <a href="https://airflow.apache.org">Airflow</a>, <a href="https://prefect.io">Prefect</a>, <a href="https://dagster.io/">Dagster</a>, <a href="https://modal.com">Modal</a>, or any other scheduler.</p>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<p>Run <code>recap crawl</code> to begin crawling all configured infrastructure. You may optionall specify a URL to crawl:</p>
+<div class="codehilite"><pre><span></span><code>recap crawl postgresql://username@localhost/some_db
+</code></pre></div>
+
+<p>See the <a href="../commands/">commands</a> page for crawler command details.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>See the <a href="../configuration/">configuration</a> page for crawler configuration details.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      2023-01-01
+    
+  </small>
+</div>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -391,6 +538,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../commands/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Commands" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Commands
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../browsers/" class="md-footer__link md-footer__link--next" aria-label="Next: Browsers" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Browsers
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -413,10 +596,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/0.2.0", "features": ["search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "/0.2.0/assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="/0.2.0/assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
     
     

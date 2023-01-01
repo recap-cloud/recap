@@ -12,21 +12,21 @@
         <meta name="author" content="Chris Riccomini">
       
       
-        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/">
+        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/analyzers/">
       
-      <link rel="icon" href="img/favicon.ico">
+      <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Recap</title>
+        <title>Analyzers - Recap</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.975780f9.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
         
       
       
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#recap" class="md-skip">
+        <a href="#database-analyzers" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +90,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Recap" class="md-header__button md-logo" aria-label="Recap" data-md-component="logo">
+    <a href=".." title="Recap" class="md-header__button md-logo" aria-label="Recap" data-md-component="logo">
       
-  <img src="img/recap-logo-square.png" alt="logo">
+  <img src="../img/recap-logo-square.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Analyzers
             
           </span>
         </div>
@@ -217,9 +217,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Recap" class="md-nav__button md-logo" aria-label="Recap" data-md-component="logo">
+    <a href=".." title="Recap" class="md-nav__button md-logo" aria-label="Recap" data-md-component="logo">
       
-  <img src="img/recap-logo-square.png" alt="logo">
+  <img src="../img/recap-logo-square.png" alt="logo">
 
     </a>
     Recap
@@ -245,6 +245,81 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        Quickstart
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crawler/" class="md-nav__link">
+        Crawler
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../browsers/" class="md-nav__link">
+        Browsers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -253,16 +328,14 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Home
+          Analyzers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
-        Home
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Analyzers
       </a>
       
         
@@ -270,8 +343,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -281,30 +352,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#database-analyzers" class="md-nav__link">
+    Database Analyzers
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Analyzers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+        
+          <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    Column
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+        
+          <li class="md-nav__item">
+  <a href="#comment" class="md-nav__link">
+    Comment
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
+        
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    Foreign Key
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    Index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-key" class="md-nav__link">
+    Primary Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-definitions" class="md-nav__link">
+    View Definitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -324,82 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quickstart/" class="md-nav__link">
-        Quickstart
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="commands/" class="md-nav__link">
-        Commands
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="crawler/" class="md-nav__link">
-        Crawler
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="browsers/" class="md-nav__link">
-        Browsers
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="analyzers/" class="md-nav__link">
-        Analyzers
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
     </li>
@@ -414,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="logging/" class="md-nav__link">
+      <a href="../logging/" class="md-nav__link">
         Logging
       </a>
     </li>
@@ -438,8 +482,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -448,30 +490,78 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
-    Features
+  <a href="#database-analyzers" class="md-nav__link">
+    Database Analyzers
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Analyzers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    Access
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+        
+          <li class="md-nav__item">
+  <a href="#column" class="md-nav__link">
+    Column
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+        
+          <li class="md-nav__item">
+  <a href="#comment" class="md-nav__link">
+    Comment
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
-    Getting Started
+        
+          <li class="md-nav__item">
+  <a href="#foreign-key" class="md-nav__link">
+    Foreign Key
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    Index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-key" class="md-nav__link">
+    Primary Key
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    Profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-definitions" class="md-nav__link">
+    View Definitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -489,47 +579,153 @@
                 
                   
 
-  <a href="https://github.com/recap-cloud/recap/tree/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/recap-cloud/recap/tree/main/docs/analyzers.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="recap">Recap<a class="headerlink" href="#recap" title="Permanent link">&para;</a></h1>
-<p>Recap is a dead simple data catalog for engineers.</p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Supports major cloud data warehouses and Postgres</li>
-<li>No external system dependencies to get started</li>
-<li>Designed for the CLI</li>
-<li>Runs as a Python library or REST API</li>
-<li>Customizable with plugins</li>
-</ul>
-<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>pip install recap-core
-</code></pre></div>
+  <h1>Analyzers</h1>
 
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<p>Recap analyzers generate metadata; they're given a path and return a dictionary of metadata.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>recap crawl</code> will run all available analyzers, if possible. You can exclude analyzers using <code>--exclude</code>. See the <a href="../commands/">commands</a> documentation for more information.</p>
+</div>
+<h2 id="database-analyzers">Database Analyzers<a class="headerlink" href="#database-analyzers" title="Permanent link">&para;</a></h2>
+<p>Recap ships with the following analyzer plugins:</p>
 <ul>
-<li><code>recap catalog list</code> - List a data catalog directory.</li>
-<li><code>recap catalog read</code> - Read metadata from the data catalog.</li>
-<li><code>recap catalog search</code> - Search the data catalog for metadata.</li>
-<li><code>recap crawl</code> - Crawl infrastructure and save metadata in the data catalog.</li>
-<li><code>recap plugins analyzers</code> - List all analyzer plugins.</li>
-<li><code>recap plugins browsers</code> - List all browser plugins.</li>
-<li><code>recap plugins catalogs</code> - List all catalog plugins.</li>
-<li><code>recap plugins commands</code> - List all command plugins.</li>
-<li><code>recap serve</code> - Start Recap's REST API.</li>
+<li><code>db.access</code></li>
+<li><code>db.column</code></li>
+<li><code>db.comment</code></li>
+<li><code>db.foreign_key</code> </li>
+<li><code>db.index</code></li>
+<li><code>db.location</code></li>
+<li><code>db.primary_key</code></li>
+<li><code>db.profile</code></li>
+<li><code>db.view_definitions</code></li>
 </ul>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>See the <a href="quickstart/">Quickstart</a> page to get started.</p>
+<h3 id="access">Access<a class="headerlink" href="#access" title="Permanent link">&para;</a></h3>
+<p>Returns user access information for a table or view.</p>
+<div class="highlight"><pre><span></span><code>&quot;access&quot;: {
+  &quot;&lt;username&gt;&quot;: {
+    &quot;privileges&quot;: [
+      &quot;INSERT&quot;,
+      &quot;SELECT&quot;,
+      &quot;UPDATE&quot;,
+      &quot;DELETE&quot;,
+      &quot;TRUNCATE&quot;,
+      &quot;REFERENCES&quot;,
+      &quot;TRIGGER&quot;
+    ],
+    &quot;read&quot;: true,
+    &quot;write&quot;: true
+  }
+}
+</code></pre></div>
+<h3 id="column">Column<a class="headerlink" href="#column" title="Permanent link">&para;</a></h3>
+<p>Returns column schemas.</p>
+<div class="highlight"><pre><span></span><code>&quot;columns&quot;: {
+  &quot;email&quot;: {
+    &quot;autoincrement&quot;: false,
+    &quot;default&quot;: null,
+    &quot;generic_type&quot;: &quot;VARCHAR&quot;,
+    &quot;nullable&quot;: false,
+    &quot;type&quot;: &quot;VARCHAR&quot;
+  },
+  &quot;id&quot;: {
+    &quot;autoincrement&quot;: true,
+    &quot;default&quot;: &quot;nextval(&#39;\&quot;some_db\&quot;.some_table_id_seq&#39;::regclass)&quot;,
+    &quot;generic_type&quot;: &quot;BIGINT&quot;,
+    &quot;nullable&quot;: false,
+    &quot;type&quot;: &quot;BIGINT&quot;
+  }
+}
+</code></pre></div>
+<h3 id="comment">Comment<a class="headerlink" href="#comment" title="Permanent link">&para;</a></h3>
+<p>Returns a table's coment, if any.</p>
+<div class="highlight"><pre><span></span><code>&quot;comment&quot;: &quot;The roles that can be applied to the current user.&quot;
+</code></pre></div>
+<h3 id="foreign-key">Foreign Key<a class="headerlink" href="#foreign-key" title="Permanent link">&para;</a></h3>
+<p>Returns foreign key information.</p>
+<div class="highlight"><pre><span></span><code>&quot;foreign_keys&quot;: [
+  {
+    &quot;constrained_columns&quot;: [
+      &quot;some_id&quot;
+    ],
+    &quot;name&quot;: &quot;fk_some_id&quot;,
+    &quot;options&quot;: {},
+    &quot;referred_columns&quot;: [
+      &quot;id&quot;
+    ],
+    &quot;referred_schema&quot;: &quot;some_schema&quot;,
+    &quot;referred_table&quot;: &quot;some_table&quot;
+  }
+]
+</code></pre></div>
+<h3 id="index">Index<a class="headerlink" href="#index" title="Permanent link">&para;</a></h3>
+<p>Returns index information.</p>
+<div class="highlight"><pre><span></span><code>&quot;indexes&quot;: {
+  &quot;index_some_table_on_email&quot;: {
+    &quot;columns&quot;: [
+      &quot;email&quot;
+    ],
+    &quot;unique&quot;: false
+  }
+}
+</code></pre></div>
+<h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
+<p>Returns the type, instance, schema, and table/ view location.</p>
+<div class="highlight"><pre><span></span><code>&quot;location&quot;: {
+  &quot;database&quot;: &quot;postgresql&quot;,
+  &quot;instance&quot;: &quot;localhost&quot;,
+  &quot;schema&quot;: &quot;some_db&quot;,
+  &quot;table&quot;: &quot;some_table&quot;
+}
+</code></pre></div>
+<h3 id="primary-key">Primary Key<a class="headerlink" href="#primary-key" title="Permanent link">&para;</a></h3>
+<p>Returns primary key information</p>
+<div class="highlight"><pre><span></span><code>&quot;primary_key&quot;: {
+  &quot;constrained_columns&quot;: [
+    &quot;id&quot;
+  ],
+  &quot;name&quot;: &quot;some_table_pkey&quot;
+}
+</code></pre></div>
+<h3 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h3>
+<p>Returns basic table statistics (max, min, nulls, count, and so on).</p>
+<div class="highlight"><pre><span></span><code>&quot;profile&quot;: {
+  &quot;email&quot;: {
+    &quot;count&quot;: 10,
+    &quot;distinct&quot;: 10,
+    &quot;empty_strings&quot;: 0,
+    &quot;max_length&quot;: 32,
+    &quot;min_length&quot;: 13,
+    &quot;nulls&quot;: 0
+  },
+  &quot;id&quot;: {
+    &quot;average&quot;: 5.5,
+    &quot;count&quot;: 10,
+    &quot;max&quot;: 10,
+    &quot;min&quot;: 1,
+    &quot;negatives&quot;: 0,
+    &quot;nulls&quot;: 0,
+    &quot;sum&quot;: 55.0,
+    &quot;zeros&quot;: 0
+  }
+}
+</code></pre></div>
+<h3 id="view-definitions">View Definitions<a class="headerlink" href="#view-definitions" title="Permanent link">&para;</a></h3>
+<p>Returns a view's query, if any.</p>
+<div class="highlight"><pre><span></span><code>&quot;view_definition&quot;: &quot;SELECT * FROM table;&quot;
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2022-12-31
+      2023-01-01
     
   </small>
 </div>
@@ -552,15 +748,30 @@
     
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
+        
+        <a href="../browsers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Browsers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Browsers
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="quickstart/" class="md-footer__link md-footer__link--next" aria-label="Next: Quickstart" rel="next">
+        <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Quickstart
+              Configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -591,10 +802,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "search.share", "content.code.annotate"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
       
     
     
