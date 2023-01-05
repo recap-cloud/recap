@@ -443,6 +443,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../catalogs/" class="md-nav__link">
+        Catalogs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        Server
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
@@ -460,6 +490,21 @@
     <li class="md-nav__item">
       <a href="../logging/" class="md-nav__link">
         Logging
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        Plugins
       </a>
     </li>
   
@@ -598,7 +643,7 @@
 <li><code>db.access</code></li>
 <li><code>db.column</code></li>
 <li><code>db.comment</code></li>
-<li><code>db.foreign_key</code> </li>
+<li><code>db.foreign_key</code></li>
 <li><code>db.index</code></li>
 <li><code>db.location</code></li>
 <li><code>db.primary_key</code></li>
@@ -607,117 +652,117 @@
 </ul>
 <h3 id="access">Access<a class="headerlink" href="#access" title="Permanent link">&para;</a></h3>
 <p>Returns user access information for a table or view.</p>
-<div class="highlight"><pre><span></span><code>&quot;access&quot;: {
-  &quot;&lt;username&gt;&quot;: {
-    &quot;privileges&quot;: [
-      &quot;INSERT&quot;,
-      &quot;SELECT&quot;,
-      &quot;UPDATE&quot;,
-      &quot;DELETE&quot;,
-      &quot;TRUNCATE&quot;,
-      &quot;REFERENCES&quot;,
-      &quot;TRIGGER&quot;
-    ],
-    &quot;read&quot;: true,
-    &quot;write&quot;: true
-  }
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;access&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;&lt;username&gt;&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;privileges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;INSERT&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;SELECT&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;UPDATE&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;DELETE&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;TRUNCATE&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;REFERENCES&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;TRIGGER&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;read&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;write&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="column">Column<a class="headerlink" href="#column" title="Permanent link">&para;</a></h3>
 <p>Returns column schemas.</p>
-<div class="highlight"><pre><span></span><code>&quot;columns&quot;: {
-  &quot;email&quot;: {
-    &quot;autoincrement&quot;: false,
-    &quot;default&quot;: null,
-    &quot;generic_type&quot;: &quot;VARCHAR&quot;,
-    &quot;nullable&quot;: false,
-    &quot;type&quot;: &quot;VARCHAR&quot;
-  },
-  &quot;id&quot;: {
-    &quot;autoincrement&quot;: true,
-    &quot;default&quot;: &quot;nextval(&#39;\&quot;some_db\&quot;.some_table_id_seq&#39;::regclass)&quot;,
-    &quot;generic_type&quot;: &quot;BIGINT&quot;,
-    &quot;nullable&quot;: false,
-    &quot;type&quot;: &quot;BIGINT&quot;
-  }
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;autoincrement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;generic_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VARCHAR&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nullable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VARCHAR&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;autoincrement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nextval(&#39;\&quot;some_db\&quot;.some_table_id_seq&#39;::regclass)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;generic_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BIGINT&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nullable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BIGINT&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="comment">Comment<a class="headerlink" href="#comment" title="Permanent link">&para;</a></h3>
 <p>Returns a table's coment, if any.</p>
-<div class="highlight"><pre><span></span><code>&quot;comment&quot;: &quot;The roles that can be applied to the current user.&quot;
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The roles that can be applied to the current user.&quot;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="foreign-key">Foreign Key<a class="headerlink" href="#foreign-key" title="Permanent link">&para;</a></h3>
 <p>Returns foreign key information.</p>
-<div class="highlight"><pre><span></span><code>&quot;foreign_keys&quot;: [
-  {
-    &quot;constrained_columns&quot;: [
-      &quot;some_id&quot;
-    ],
-    &quot;name&quot;: &quot;fk_some_id&quot;,
-    &quot;options&quot;: {},
-    &quot;referred_columns&quot;: [
-      &quot;id&quot;
-    ],
-    &quot;referred_schema&quot;: &quot;some_schema&quot;,
-    &quot;referred_table&quot;: &quot;some_table&quot;
-  }
-]
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;foreign_keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;constrained_columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;some_id&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fk_some_id&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;referred_columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;id&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;referred_schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_schema&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;referred_table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_table&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 <h3 id="index">Index<a class="headerlink" href="#index" title="Permanent link">&para;</a></h3>
 <p>Returns index information.</p>
-<div class="highlight"><pre><span></span><code>&quot;indexes&quot;: {
-  &quot;index_some_table_on_email&quot;: {
-    &quot;columns&quot;: [
-      &quot;email&quot;
-    ],
-    &quot;unique&quot;: false
-  }
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;indexes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;index_some_table_on_email&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;email&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;unique&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
 <p>Returns the type, instance, schema, and table/ view location.</p>
-<div class="highlight"><pre><span></span><code>&quot;location&quot;: {
-  &quot;database&quot;: &quot;postgresql&quot;,
-  &quot;instance&quot;: &quot;localhost&quot;,
-  &quot;schema&quot;: &quot;some_db&quot;,
-  &quot;table&quot;: &quot;some_table&quot;
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postgresql&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;instance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_db&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;table&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_table&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="primary-key">Primary Key<a class="headerlink" href="#primary-key" title="Permanent link">&para;</a></h3>
 <p>Returns primary key information</p>
-<div class="highlight"><pre><span></span><code>&quot;primary_key&quot;: {
-  &quot;constrained_columns&quot;: [
-    &quot;id&quot;
-  ],
-  &quot;name&quot;: &quot;some_table_pkey&quot;
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;primary_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;constrained_columns&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;id&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;some_table_pkey&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h3>
 <p>Returns basic table statistics (max, min, nulls, count, and so on).</p>
-<div class="highlight"><pre><span></span><code>&quot;profile&quot;: {
-  &quot;email&quot;: {
-    &quot;count&quot;: 10,
-    &quot;distinct&quot;: 10,
-    &quot;empty_strings&quot;: 0,
-    &quot;max_length&quot;: 32,
-    &quot;min_length&quot;: 13,
-    &quot;nulls&quot;: 0
-  },
-  &quot;id&quot;: {
-    &quot;average&quot;: 5.5,
-    &quot;count&quot;: 10,
-    &quot;max&quot;: 10,
-    &quot;min&quot;: 1,
-    &quot;negatives&quot;: 0,
-    &quot;nulls&quot;: 0,
-    &quot;sum&quot;: 55.0,
-    &quot;zeros&quot;: 0
-  }
-}
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;distinct&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;empty_strings&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;max_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;min_length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nulls&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;average&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.5</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;negatives&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;nulls&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;sum&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">55.0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;zeros&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="view-definitions">View Definitions<a class="headerlink" href="#view-definitions" title="Permanent link">&para;</a></h3>
 <p>Returns a view's query, if any.</p>
-<div class="highlight"><pre><span></span><code>&quot;view_definition&quot;: &quot;SELECT * FROM table;&quot;
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;view_definition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM table;&quot;</span><span class="w"></span>
 </code></pre></div>
 
   <hr>
@@ -725,7 +770,7 @@
   <small>
     
       Last update:
-      2023-01-01
+      2022-12-31
     
   </small>
 </div>
@@ -765,13 +810,13 @@
       
       
         
-        <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration" rel="next">
+        <a href="../catalogs/" class="md-footer__link md-footer__link--next" aria-label="Next: Catalogs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Configuration
+              Catalogs
             </div>
           </div>
           <div class="md-footer__button md-icon">

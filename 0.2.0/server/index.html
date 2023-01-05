@@ -12,14 +12,14 @@
         <meta name="author" content="Chris Riccomini">
       
       
-        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/browsers/">
+        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/server/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Browsers - Recap</title>
+        <title>Server - Recap</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#starting" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Browsers
+              Server
             
           </span>
         </div>
@@ -300,19 +305,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../browsers/" class="md-nav__link">
         Browsers
       </a>
-      
     </li>
   
 
@@ -353,11 +350,117 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Server
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting" class="md-nav__link">
+    Starting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
+    Configuring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    Endpoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-a-directory" class="md-nav__link">
+    Read a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-metadata" class="md-nav__link">
+    Read metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-a-directory" class="md-nav__link">
+    Write a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-metadata" class="md-nav__link">
+    Write metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-directory" class="md-nav__link">
+    Delete a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-metadata" class="md-nav__link">
+    Delete metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -425,6 +528,90 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#starting" class="md-nav__link">
+    Starting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring" class="md-nav__link">
+    Configuring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    Endpoints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-a-directory" class="md-nav__link">
+    Read a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#read-metadata" class="md-nav__link">
+    Read metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-a-directory" class="md-nav__link">
+    Write a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-metadata" class="md-nav__link">
+    Write metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-directory" class="md-nav__link">
+    Delete a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-metadata" class="md-nav__link">
+    Delete metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -437,43 +624,57 @@
                 
                   
 
-  <a href="https://github.com/recap-cloud/recap/tree/main/docs/browsers.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/recap-cloud/recap/tree/main/docs/server.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Browsers</h1>
+  <h1>Server</h1>
 
-<p>Different data infrastructure have different types of objects:</p>
-<ul>
-<li>schemas</li>
-<li>tables</li>
-<li>columns</li>
-<li>files</li>
-<li>paths</li>
-<li>topics</li>
-<li>partitions</li>
-</ul>
-<p>Recap uses a <em>browser</em> abstraction to deal with different data infrastructure in a standard way.</p>
-<p>Browsers map infrastructure objects into a standard directory format. A different browser is used for each type of infrastructure. Out of the box, Recap ships with a <a href="https://github.com/recap-cloud/recap/blob/main/recap/plugins/browsers/db.py">DatabaseBrowser</a>, which maps database objects into a directory structure:</p>
-<div class="highlight"><pre><span></span><code>/
-/databases
-/databases/&lt;some_db&gt;
-/databases/&lt;some_db&gt;/instances
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/tables
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/tables/&lt;some_view&gt;
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/views
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/views/&lt;some_view&gt;
+<p>Recap comes with an HTTP/JSON API server implementation of Recap's <a href="../catalogs/">catalog</a> interface. The server allows non-Python systems to integrate with Recap. The server also allows metadata to be shared amgonst different systems when they all point to the same server using <a href="../catalogs/#recap-catalog">Recap's catalog</a>.</p>
+<h2 id="starting">Starting<a class="headerlink" href="#starting" title="Permanent link">&para;</a></h2>
+<p>Recap's server starts when the <code>recap serve</code> command is executed.</p>
+<h2 id="configuring">Configuring<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h2>
+<p>Recap's server is implemented as a <a href="https://fastapi.tiangolo.com/">FastAPI</a> in a <a href="https://www.uvicorn.org/">uvicorn</a> web server. Any configuration set in your <code>settings.toml</code> file under the <code>api</code> namespace will be passed to Recap's <code>uvicorn.run</code> invocation.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[api]</span><span class="w"></span>
+<span class="n">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;192.168.0.1&quot;</span><span class="w"></span>
+<span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9000</span><span class="w"></span>
+<span class="n">access_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"></span>
 </code></pre></div>
+<h2 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h2>
+<p>Recap has only two endpoints:</p>
+<ul>
+<li>GET <code>/search</code> - Search the Recap catalog.</li>
+<li>GET | PUT | DELETE <code>/&lt;path&gt;</code> - Read, write, or remove metadata or directory paths.</li>
+</ul>
+<p>Recap's JSON schema is visible at <a href="http://localhost:8000/docs">http://localhost:8000/docs</a> when you start the server with the <code>recap server</code> command. Recap's catalog <a href="https://github.com/recap-cloud/recap/blob/main/recap/plugins/catalogs/recap.py">source code</a> illustrates how to call Recap server.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Browsers do not actually analyze a system's data for metdata, they simply show what's available.</p>
+<p>Recap's server does not currently have data models for each metadata type; they're just JSON blobs. The JSON schema displays the return type as an <code>application/json</code> string.</p>
 </div>
-<p>This directory path is what you use when you run <code>recap catalog list</code> and <code>recap catalog read</code>. The directory structure is also used when executing <code>recap crawl</code> with a <code>--filter</code> option.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>The following examples illlustrate how to call a Recap server running at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+<h3 id="read-a-directory">Read a directory<a class="headerlink" href="#read-a-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl http://localhost:8000/databases/postgresql
+</code></pre></div>
+<h3 id="read-metadata">Read metadata<a class="headerlink" href="#read-metadata" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl <span class="s1">&#39;http://localhost:8000/databases/postgresql/instances/some_instance/schemas/some_db/tables/some_table?read=true&#39;</span>
+</code></pre></div>
+<h3 id="write-a-directory">Write a directory<a class="headerlink" href="#write-a-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl -X PUT http://localhost:8000/databases/postgresql/instances/some_instance/schemas/some_db/tables
+</code></pre></div>
+<h3 id="write-metadata">Write metadata<a class="headerlink" href="#write-metadata" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl -X PUT <span class="s1">&#39;http://localhost:8000/databases/postgresql/instances/some_instance/schemas/some_db/tables/some_table?type=some_metadata_type&#39;</span> <span class="se">\</span>
+  -d <span class="s1">&#39;{&quot;some_metadata_type&quot;: {&quot;metadata_key&quot;: &quot;metadata_value&quot;}}&#39;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+</code></pre></div>
+<h3 id="delete-a-directory">Delete a directory<a class="headerlink" href="#delete-a-directory" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl -X DELETE http://localhost:8000/databases/postgresql
+</code></pre></div>
+<h3 id="delete-metadata">Delete metadata<a class="headerlink" href="#delete-metadata" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>curl -X DELETE <span class="s1">&#39;http://localhost:8000/databases/postgresql/instances/some_instance/schemas/some_db/tables/some_table?type=some_metadata_type&#39;</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -504,7 +705,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../crawler/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Crawler" rel="prev">
+        <a href="../catalogs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Catalogs" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -513,20 +714,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Crawler
+              Catalogs
             </div>
           </div>
         </a>
       
       
         
-        <a href="../analyzers/" class="md-footer__link md-footer__link--next" aria-label="Next: Analyzers" rel="next">
+        <a href="../configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Analyzers
+              Configuration
             </div>
           </div>
           <div class="md-footer__button md-icon">

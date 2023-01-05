@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#duckdb-catalog" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -330,6 +335,87 @@
 
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Catalogs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Catalogs
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duckdb-catalog" class="md-nav__link">
+    DuckDB Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesystem-catalog" class="md-nav__link">
+    Filesystem Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-catalog" class="md-nav__link">
+    Recap Catalog
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        Server
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
   
     <li class="md-nav__item">
       <a href="../configuration/" class="md-nav__link">
@@ -354,6 +440,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -371,6 +472,35 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duckdb-catalog" class="md-nav__link">
+    DuckDB Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filesystem-catalog" class="md-nav__link">
+    Filesystem Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recap-catalog" class="md-nav__link">
+    Recap Catalog
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -392,14 +522,39 @@
 
   <h1>Catalogs</h1>
 
-
+<p>Recap catalogs store metadata and expose read and search APIs. Recap ships with the <a href="https://duckdb.org/">DuckDB</a>, Filesystem, and Recap catalog implementations. The DuckDB catalog is enabled by default.</p>
+<h2 id="duckdb-catalog">DuckDB Catalog<a class="headerlink" href="#duckdb-catalog" title="Permanent link">&para;</a></h2>
+<p>The DuckDB catalog stores data in a local DuckDB file. By default, the file is located in <code>~/.recap/catalog/recap.duckdb</code>. Search is implemented using DuckDB's <a href="https://duckdb.org/docs/extensions/json">JSON path</a> syntax. See <a href="../commands/">Commands</a> for an example.</p>
+<p>You can configure the DuckDB catalog in your <code>settings.toml</code> like so:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[catalog]</span><span class="w"></span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;duckdb&quot;</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///some/path/to/duck.db&quot;</span><span class="w"></span>
+<span class="n">duckdb</span><span class="p">.</span><span class="n">read_only</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
+</code></pre></div>
+<p>Anything under the <code>catalog.duckdb</code> namespace will be forwarded to the DuckDB Python client.</p>
+<h2 id="filesystem-catalog">Filesystem Catalog<a class="headerlink" href="#filesystem-catalog" title="Permanent link">&para;</a></h2>
+<p>The filesystem catalog uses <a href="https://filesystem-spec.readthedocs.io/en/latest/">fsspec</a> to persist metadata in a filesystem (or object store like S3).</p>
+<p>Search is implemented using <a href="https://pypi.org/project/pyjq/">pyjq</a>. The filesystem catalog recurses over every metadata file in the catalog and runs a <a href="https://stedolan.github.io/jq/">jq</a> query on each JSON file.</p>
+<p>Configure the filesystem catalog with <code>type = "fs"</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[catalog]</span><span class="w"></span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fs&quot;</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;file:///some/catalog/directory&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>Anything under the <code>catalog.fs</code> namespace will be forwarded to the <code>fsspec.filesystem</code> Python call.</p>
+<h2 id="recap-catalog">Recap Catalog<a class="headerlink" href="#recap-catalog" title="Permanent link">&para;</a></h2>
+<p>The Recap catalog makes HTTP requests to a <a href="../server/">Recap server</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[catalog]</span><span class="w"></span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap&quot;</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://localhost:8000&quot;</span><span class="w"></span>
+</code></pre></div>
+<p>The Recap catalog enables different systems to share the same metadata when they all talk to the same Recap server.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-01-01
+      2022-12-31
     
   </small>
 </div>
@@ -418,6 +573,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../analyzers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Analyzers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Analyzers
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../server/" class="md-footer__link md-footer__link--next" aria-label="Next: Server" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Server
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

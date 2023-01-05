@@ -12,14 +12,14 @@
         <meta name="author" content="Chris Riccomini">
       
       
-        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/browsers/">
+        <link rel="canonical" href="https://docs.recap.cloud/0.2.0/plugins/">
       
       <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Browsers - Recap</title>
+        <title>Plugins - Recap</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#analyzers" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Browsers
+              Plugins
             
           </span>
         </div>
@@ -300,19 +305,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../browsers/" class="md-nav__link">
         Browsers
       </a>
-      
     </li>
   
 
@@ -398,11 +395,69 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../plugins/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Plugins
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#analyzers" class="md-nav__link">
+    Analyzers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browsers" class="md-nav__link">
+    Browsers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalogs" class="md-nav__link">
+    Catalogs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -425,6 +480,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#analyzers" class="md-nav__link">
+    Analyzers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browsers" class="md-nav__link">
+    Browsers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catalogs" class="md-nav__link">
+    Catalogs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -437,43 +528,62 @@
                 
                   
 
-  <a href="https://github.com/recap-cloud/recap/tree/main/docs/browsers.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/recap-cloud/recap/tree/main/docs/plugins.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>Browsers</h1>
+  <h1>Plugins</h1>
 
-<p>Different data infrastructure have different types of objects:</p>
+<p>You can extend Recap with plugins. In fact, everything in Recap is a plugin except for its crawler (and even that might change eventually).</p>
+<p>Plugins are implemented using Pythons <code>entry-points</code> package metadata. See Python's <a href="https://packaging.python.org/en/latest/guides/creating-and-discovering-plugins/#using-package-metadata">using pacakge metadata</a> page for more details on this style of plugin architecture.</p>
+<p>There are four types of plugins:</p>
 <ul>
-<li>schemas</li>
-<li>tables</li>
-<li>columns</li>
-<li>files</li>
-<li>paths</li>
-<li>topics</li>
-<li>partitions</li>
+<li>Analyzers</li>
+<li>Browsers</li>
+<li>Catalogs</li>
+<li>Commands</li>
 </ul>
-<p>Recap uses a <em>browser</em> abstraction to deal with different data infrastructure in a standard way.</p>
-<p>Browsers map infrastructure objects into a standard directory format. A different browser is used for each type of infrastructure. Out of the box, Recap ships with a <a href="https://github.com/recap-cloud/recap/blob/main/recap/plugins/browsers/db.py">DatabaseBrowser</a>, which maps database objects into a directory structure:</p>
-<div class="highlight"><pre><span></span><code>/
-/databases
-/databases/&lt;some_db&gt;
-/databases/&lt;some_db&gt;/instances
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/tables
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/tables/&lt;some_view&gt;
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/views
-/databases/&lt;some_db&gt;/instances/&lt;some_instance&gt;/schemas/&lt;some_schema&gt;/views/&lt;some_view&gt;
+<h2 id="analyzers">Analyzers<a class="headerlink" href="#analyzers" title="Permanent link">&para;</a></h2>
+<p><a href="../analyzers/">Analyzer plugins</a> must implement the <a href="https://github.com/recap-cloud/recap/blob/main/recap/plugins/analyzers/abstract.py">AbstractAnalyzer</a> class.</p>
+<p>Packages can export their analyzers using the <code>recap.analyzers</code> entrypoint. Here's how Recap's built-in analyzers are defined in its <a href="https://github.com/recap-cloud/recap/blob/main/pyproject.toml">pyproject.toml</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.&quot;recap.analyzers&quot;]</span><span class="w"></span>
+<span class="s">&quot;db.access&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableAccessAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.column&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableColumnAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.comment&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableCommentAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.foreign_key&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableForeignKeyAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.index&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableIndexAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.location&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableLocationAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.primary_key&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TablePrimaryKeyAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.profile&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableProfileAnalyzer&quot;</span><span class="w"></span>
+<span class="s">&quot;db.view_definitions&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.analyzers.table:TableViewDefinitionAnalyzer&quot;</span><span class="w"></span>
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Browsers do not actually analyze a system's data for metdata, they simply show what's available.</p>
-</div>
-<p>This directory path is what you use when you run <code>recap catalog list</code> and <code>recap catalog read</code>. The directory structure is also used when executing <code>recap crawl</code> with a <code>--filter</code> option.</p>
+<h2 id="browsers">Browsers<a class="headerlink" href="#browsers" title="Permanent link">&para;</a></h2>
+<p><a href="../browsers/">Browser plugins</a> must implement the <a href="https://github.com/recap-cloud/recap/blob/main/recap/plugins/browsers/abstract.py">AbstractBrowser</a> class.</p>
+<p>Packages can export their browsers using the <code>recap.browsers</code> entrypoint. Here's how Recap's built-in browser is defined in its <a href="https://github.com/recap-cloud/recap/blob/main/pyproject.toml">pyproject.toml</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.&quot;recap.browsers&quot;]</span><span class="w"></span>
+<span class="n">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.browsers.db:DatabaseBrowser&quot;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="catalogs">Catalogs<a class="headerlink" href="#catalogs" title="Permanent link">&para;</a></h2>
+<p><a href="../catalogs/">Catalog plugins</a> must implement the <a href="https://github.com/recap-cloud/recap/blob/main/recap/plugins/catalogs/abstract.py">AbstractCatalog</a> class.</p>
+<p>Packages can export their catalogs using the <code>recap.catalogs</code> entrypoint. Here's how Recap's built-in catalogs are defined in its <a href="https://github.com/recap-cloud/recap/blob/main/pyproject.toml">pyproject.toml</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.&quot;recap.catalogs&quot;]</span><span class="w"></span>
+<span class="n">duckdb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.catalogs.duckdb:DuckDbCatalog&quot;</span><span class="w"></span>
+<span class="n">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.catalogs.fs:FilesystemCatalog&quot;</span><span class="w"></span>
+<span class="n">recap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.catalogs.recap:RecapCatalog&quot;</span><span class="w"></span>
+</code></pre></div>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<p><a href="../commands/">Command plugins</a> use <a href="https://typer.tiangolo.com/">Typer</a>. Plugins must expose a <code>typer.Typer()</code> object, usually defined as:</p>
+<div class="highlight"><pre><span></span><code><span class="n">app</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Typer</span><span class="p">()</span>
+</code></pre></div>
+<p>Packages can export their commands using the <code>recap.commands</code> entrypoint. Here's how Recap's built-in commands are defined in its <a href="https://github.com/recap-cloud/recap/blob/main/pyproject.toml">pyproject.toml</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.&quot;recap.commands&quot;]</span><span class="w"></span>
+<span class="n">catalog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.commands.catalog:app&quot;</span><span class="w"></span>
+<span class="n">crawl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.commands.crawl:app&quot;</span><span class="w"></span>
+<span class="n">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.commands.plugins:app&quot;</span><span class="w"></span>
+<span class="n">serve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap.plugins.commands.serve:app&quot;</span><span class="w"></span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -504,7 +614,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../crawler/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Crawler" rel="prev">
+        <a href="../logging/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Logging" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -513,26 +623,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Crawler
+              Logging
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../analyzers/" class="md-footer__link md-footer__link--next" aria-label="Next: Analyzers" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Analyzers
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   

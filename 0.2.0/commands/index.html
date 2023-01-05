@@ -428,6 +428,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../catalogs/" class="md-nav__link">
+        Catalogs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        Server
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../configuration/" class="md-nav__link">
         Configuration
       </a>
@@ -445,6 +475,21 @@
     <li class="md-nav__item">
       <a href="../logging/" class="md-nav__link">
         Logging
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        Plugins
       </a>
     </li>
   
@@ -592,7 +637,7 @@
 <h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h2>
 <p>The <code>recap plugins</code> command lists the Recap plugins that you have installed in your environment.</p>
 <p>To list the available analyzers, run this command:</p>
-<div class="highlight"><pre><span></span><code>recap plugins analyzers             
+<div class="highlight"><pre><span></span><code>recap plugins analyzers
 [
   &quot;db.access&quot;,
   &quot;db.column&quot;,
@@ -607,19 +652,19 @@
 </code></pre></div>
 <p>See <code>recap plugins --help</code> for more.</p>
 <h2 id="serve">Serve<a class="headerlink" href="#serve" title="Permanent link">&para;</a></h2>
-<p>You might wish to centralize your Recap data catalog in one place, and have all users read from the same location. Recap ships with an HTTP/JSON server for this use case. Start a Recap server on a single host using <code>recap serve</code>. Clients can then configure their Recap <code>settings.toml</code> to point to the server location:</p>
-<div class="highlight"><pre><span></span><code>[catalog]
-type = &quot;recap&quot;
-url = &quot;http://192.168.0.1:8000&quot;
+<p>You might wish to centralize your Recap data catalog in one place, and have all users read from the same location. Recap ships with an HTTP/JSON server for this use case. Start a Recap server on a single host using <code>recap serve</code>. Clients can then configure their <a href="../catalogs/#recap-catalog">Recap catalog</a> in <code>settings.toml</code> to point to the server location:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[catalog]</span><span class="w"></span>
+<span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;recap&quot;</span><span class="w"></span>
+<span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;http://192.168.0.1:8000&quot;</span><span class="w"></span>
 </code></pre></div>
-<p>See the <a href="server.md">server</a> documentation for more information.</p>
+<p>See the <a href="../server/">server</a> documentation for more information.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      2023-01-01
+      2022-12-31
     
   </small>
 </div>
