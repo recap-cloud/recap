@@ -4,6 +4,7 @@ import sys
 from .analyzers.abstract import AbstractAnalyzer
 from .browsers.abstract import AbstractBrowser
 from .catalogs.abstract import AbstractCatalog
+from pydantic import BaseModel, create_model
 from typing import Type
 
 

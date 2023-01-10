@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from contextlib import contextmanager
 from pathlib import PurePosixPath
-from typing import Any, Generator
+from pydantic import BaseModel
+from typing import Generator, List, Type
 
 
 class AbstractAnalyzer(ABC):
@@ -36,8 +37,23 @@ class AbstractAnalyzer(ABC):
 
         raise NotImplementedError
 
+    @staticmethod
     @abstractmethod
-    def analyze(self, path: PurePosixPath) -> dict[str, Any]:
+    def types() -> dict[str, Type[BaseModel]]:
+        """
+        Returns a list of Pydantic model types that the analyze can return.
+        These types are used when creating Recap's FastAPI.
+
+        :returns: A list of Pydantic models that this analyzer can return.
+        """
+
+        raise NotImplementedError
+
+    @abstractmethod
+    def analyze(
+        self,
+        path: PurePosixPath
+    ) -> dict[str, BaseModel] | None:
         """
         Analyze a path for an infrastructure instance. Only the path is
         specified because the URL for the instance is passed in via the config

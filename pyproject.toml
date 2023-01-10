@@ -15,6 +15,7 @@ dependencies = [
     "rich>=12.6.0",
     "setuptools>=65.6.3",
     "tomli>=2.0.1",
+    "pydantic>=1.10.4",
 ]
 # <3.11 to make Recap work with sqlalchemy-bigquery
 requires-python = ">=3.9, <3.11"

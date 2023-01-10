@@ -4,8 +4,9 @@ from .abstract import AbstractAnalyzer
 from abc import abstractmethod
 from contextlib import contextmanager
 from pathlib import PurePosixPath
+from pydantic import BaseModel, Field
 from recap.browsers.db import DatabasePath, DatabaseBrowser
-from typing import Any, Generator, List
+from typing import Any, Generator, List, Type
 
 
 log = logging.getLogger(__name__)
@@ -29,14 +30,17 @@ class AbstractDatabaseAnalyzer(AbstractAnalyzer):
             log.debug('Unanalyzable. Create engine failed for url=%s', url)
             return False
 
-    def analyze(self, path: PurePosixPath) -> dict[str, Any]:
+    def analyze(
+        self,
+        path: PurePosixPath
+    ) -> dict[str, BaseModel] | None:
         database_path = DatabasePath(path)
         schema = database_path.schema
         table = database_path.table
         if schema and table:
             is_view = path.parts[3] == 'views'
             return self.analyze_table(schema, table, is_view)
-        return {}
+        return None
 
     @abstractmethod
     def analyze_table(
@@ -44,7 +48,7 @@ class AbstractDatabaseAnalyzer(AbstractAnalyzer):
         schema: str,
         table: str,
         is_view: bool = False
-    ) -> dict[str, Any]:
+    ) -> dict[str, BaseModel] | None:
         raise NotImplementedError
 
     @classmethod
@@ -54,6 +58,16 @@ class AbstractDatabaseAnalyzer(AbstractAnalyzer):
             f"Config for {cls.__name__} is missing `url` config."
         engine = sa.create_engine(config['url'])
         yield cls(engine)
+
+
+class TableLocationModel(BaseModel):
+    database: str
+    instance: str
+    # Schema is a reserved word in BaseModel.
+    schema_: str = Field(alias='schema')
+    # TODO Should validate either table or view is set and show in JSON schema.
+    table: str | None = None
+    view: str | None = None
 
 
 class TableLocationAnalyzer(AbstractDatabaseAnalyzer):
@@ -67,23 +81,26 @@ class TableLocationAnalyzer(AbstractDatabaseAnalyzer):
         self.database = root.parts[2]
         self.instance = root.parts[4]
 
+    @staticmethod
+    def types() -> dict[str, Type[BaseModel]]:
+        return {'location': TableLocationModel}
+
     def analyze_table(
         self,
         schema: str,
         table: str,
         is_view: bool = False
-    ) -> dict[str, Any]:
+    ) -> dict[str, BaseModel] | None:
         if schema and table:
             table_or_view = 'view' if is_view else 'table'
-            return {
-                'location': {
-                    'database': self.database,
-                    'instance': self.instance,
-                    'schema': schema,
-                    table_or_view: table,
-                }
+            kwargs = {
+                'database': self.database,
+                'instance': self.instance,
+                'schema': schema,
+                table_or_view: table,
             }
-        return {}
+            return {'location': TableLocationModel(**kwargs)}
+        return None
 
     @classmethod
     @contextmanager
