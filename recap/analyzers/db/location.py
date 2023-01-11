@@ -46,7 +46,7 @@ class TableLocationAnalyzer(AbstractDatabaseAnalyzer):
                 'schema': schema,
                 table_or_view: table,
             }
-            return {'location': TableLocationModel(**kwargs)}
+            return {'location': TableLocationModel.parse_obj(kwargs)}
         return None
 
     @classmethod

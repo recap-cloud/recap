@@ -21,6 +21,6 @@ class TablePrimaryKeyAnalyzer(AbstractDatabaseAnalyzer):
         is_view: bool = False
     ) -> dict[str, TablePrimaryKey] | None:
         pk_dict = sa.inspect(self.engine).get_pk_constraint(table, schema)
-        if pk_dict:
+        if pk_dict and pk_dict.get('name'):
             return {'primary_key': TablePrimaryKey.parse_obj(pk_dict)}
         return None
