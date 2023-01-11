@@ -18,7 +18,7 @@ Packages can export their analyzers using the `recap.analyzers` entrypoint. Here
 ```toml
 [project.entry-points."recap.analyzers"]
 "db.access" = "recap.analyzers.db:TableAccessAnalyzer"
-"db.column" = "recap.analyzers.db:TableColumnAnalyzer"
+"db.column" = "recap.analyzers.db:TableColumnsAnalyzer"
 "db.comment" = "recap.analyzers.db:TableCommentAnalyzer"
 "db.foreign_key" = "recap.analyzers.db:TableForeignKeyAnalyzer"
 "db.index" = "recap.analyzers.db:TableIndexAnalyzer"
